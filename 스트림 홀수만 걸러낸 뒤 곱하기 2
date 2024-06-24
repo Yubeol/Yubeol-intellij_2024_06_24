@@ -1,0 +1,40 @@
+package org.example;
+
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args) {
+        // 홀수만 걸러내기
+        int[] arr = {33, 2, 55, 4, 51, 6, 71, 18, 29, 10};
+
+        int rsArrLen = 0;
+
+        for (int n : arr) {
+            if (n % 2 == 0) {
+                rsArrLen++;
+            }
+        }
+
+
+        int[] rsArr = new int[rsArrLen];
+        int rsArrLastIndex = -1;
+
+        for (int n : arr) {
+            if (n % 2 != 0) {
+                continue;
+            }
+            rsArr[++rsArrLastIndex] = n;
+        }
+        System.out.println(Arrays.toString(rsArr));
+
+        arr = new int[] {33, 2, 55, 4, 51, 6, 71, 18, 29, 10};
+
+
+        rsArr = Arrays.stream(arr)
+                .filter(e -> e % 2 == 0)
+                .map(e -> e * 2)
+                .toArray();
+
+        System.out.println(Arrays.toString(rsArr));
+    }
+}
