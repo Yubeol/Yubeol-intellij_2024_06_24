@@ -30,7 +30,7 @@ class Main {
         arr = new int[] {33, 2, 55, 4, 51, 6, 71, 18, 29, 10};
 
 
-        rsArr = Arrays.stream(arr)
+        rsArr = Arrays.stream(arr) // filter 사용
                 .filter(e -> e % 2 == 0)
                 .map(e -> e * 2)
                 .toArray();
